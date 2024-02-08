@@ -458,6 +458,7 @@ class NautobotKeeper:  # pylint: disable=too-many-instance-attributes
             nautobot_prefix, _ = Prefix.objects.get_or_create(
                 prefix=f"{prefix.network}",
                 namespace=namespace,
+                location=self.nb_location.id,
                 type=PrefixTypeChoices.TYPE_NETWORK,
                 defaults={"status": ip_status},
             )
